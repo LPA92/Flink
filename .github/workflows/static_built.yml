@@ -1,0 +1,28 @@
+ name: Static Built
+ on:
+     push:
+          branches:
+                -- main
+ jobs:
+    built:
+        if: github.reposytory == 'LPA92/flink"
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+    step:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+        - name: Setup Python
+          uses: acctions/setup-python@v5
+          with:
+              python-version: "3.12"
+        - name: Run _built script
+          uses: Run python ./links/_remote_build.sh
+        - name: Commit and Push changes
+          uses: stefanzweifel/git-auto-commit-action@v5
+          with:
+              commit_message: Update static build
+              commit_user_name: loyola [GitHub Actions]
+              commit_user_email: loyola.inaki@gmail.com
+              commit_author: Iñaki Loyola <loyola.inaki@gmail.com>
+
