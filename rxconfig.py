@@ -8,6 +8,6 @@ config = rx.Config(
         # Acceso en local del frontend al backend
         "http://localhost:3000",
         # Acceso del frontend de la página definida en producción
-        "https://links-zlbo.onrender.com"
+        "https://flink.onrender.com" 
         ],
     )
