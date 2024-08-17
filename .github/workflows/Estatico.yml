@@ -22,9 +22,7 @@ jobs:
                   python-version: '3.12'
 
             - name: Run script remote_build.sh
-              run: |
-               chmod -> x ./links/remote_build.sh
-               ./links/remote_build.sh
+              run: ./links/remote_build.sh
 
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
