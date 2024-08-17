@@ -1,0 +1,40 @@
+name: Estatico
+
+on:
+    push:
+        branches: main
+
+jobs:
+    built:
+        if: github.repository == 'LPA92/flink'
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: '3.12'
+
+            - name: Run script remote_build.sh
+              run: |
+               chmod -> x ./links/remote_build.sh
+               ./links/remote_build.sh
+
+            - name: Commit y push para los cambios
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: Update pagina estatica
+                  commit_user_name: loyola [GitHub Acciones]
+                  commit_user_email: loyola.inaki@gmail.com
+                  commit_author: Iñaki Loyola <loyola.inaki@gmail.com>
+           
+                  
+        
+        
+        
