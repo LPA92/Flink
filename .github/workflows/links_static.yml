@@ -1,0 +1,41 @@
+name: links_static
+
+on:
+  push:
+    branches:
+      -main
+
+jobs:
+  build:
+    if: github.repository == 'LPA92/flink'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Setup Python Virtual Environment(Poetry)
+        uses: DarylStark/actions-python-venv-poetry@v1
+
+      - name: Run script remote_build.sh
+        run: |
+          chmod +x ./links/remote_build.sh
+          ./links/romote_buid.sh
+  
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update links_static
+          commit_user_name: loyola [GitHub Actions]
+          commit_user_email: loyola.inaki@gmail.com
+          commit_author: Iñaki Loyola <loyola.inaki@gmail.com>
+       
+    
