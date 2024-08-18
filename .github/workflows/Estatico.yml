@@ -21,9 +21,14 @@ jobs:
               with:
                   python-version: '3.12'
 
-            - name: Run script remote_build.sh
-              run: ./links/remote_build.sh
+            - name: Set up Python Virtual Environment (Poetry)
+              uses: DarylStark/actions-python-venv-poetry@v1
 
+            - name: Run script
+              run: |
+                  chmod +x /mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
+                  /mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
+            
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
