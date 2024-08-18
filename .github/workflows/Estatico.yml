@@ -22,7 +22,7 @@ jobs:
                   python-version: '3.12'
 
             - name: Run script
-              run: e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
+              run: cd e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
             
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
