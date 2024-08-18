@@ -21,11 +21,6 @@ jobs:
               with:
                   python-version: '3.12'
 
-            - name: Set up Python Virtual Environment (Poetry)
-              uses: finleyfamily/action-setup-python@v1.0.0 # it is HIGHLY recommended to pin this to a release
-              with:
-                python-version: '3.12'
-
             - name: Run script
               run: |
                   chmod +x /mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
