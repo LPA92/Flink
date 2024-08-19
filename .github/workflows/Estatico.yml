@@ -23,7 +23,7 @@ jobs:
 
             - name: Run script
               run: |
-                  cd e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
+                  cd mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
                   remote_build.sh
             
             - name: Commit y push para los cambios
