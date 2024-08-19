@@ -21,10 +21,16 @@ jobs:
               with:
                   python-version: '3.12'
 
-            - name: Run script
+            - name: Set Path
               run: |
-                  cd mnt/e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
-                  remote_build.sh
+                    echo "$e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links" >> $GITHUB_PATH
+      
+            - name: Get Path
+              run: |
+                    echo $GITHUB_PATH 
+
+            - name: Run script
+              run: remote_build.sh
             
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
