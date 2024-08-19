@@ -4,11 +4,6 @@ on:
     push:
         branches: main
 
-defaults:
-      run:
-        shell: bash
-        working-directory: e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
-
 jobs:
     built:
         if: github.repository == 'LPA92/flink'
