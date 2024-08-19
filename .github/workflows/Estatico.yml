@@ -21,6 +21,12 @@ jobs:
               with:
                   python-version: '3.12'
 
+            - name: Add to PATH
+              shell: bash
+              run: |
+                 echo "e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links" >> $GITHUB_PATH
+      
+
             - name: Display the path
               shell: bash
               run: echo $PATH       
