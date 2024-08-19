@@ -4,6 +4,11 @@ on:
     push:
         branches: main
 
+defaults:
+      run:
+        shell: bash
+        working-directory: e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
+
 jobs:
     built:
         if: github.repository == 'LPA92/flink'
@@ -27,10 +32,14 @@ jobs:
       
             - name: Get Path
               run: |
-                    echo $GITHUB_PATH 
+                    echo $GITHUB_PATH
+
+            - name: Display the path
+              shell: bash
+              run: echo $PATH       
 
             - name: Run script
-              run: remote_build.sh
+              run: ./remote_build.sh
             
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
