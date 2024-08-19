@@ -33,7 +33,7 @@ jobs:
 
             - name: Run script
               run: | 
-                   working-directory: e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh
+                  echo "$e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links/remote_build.sh" >> $GITHUB_PATH
             
             - name: Commit y push para los cambios
               uses: stefanzweifel/git-auto-commit-action@v5
