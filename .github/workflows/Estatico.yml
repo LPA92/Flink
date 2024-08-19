@@ -6,7 +6,8 @@ on:
 
 defaults:
     run:
-        working-directory: e:/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links” 
+        shell: bash
+        working-directory: /e/Master/Visual_Studio_Code/GitLab/Python/Reflex/frontend/links
 
 jobs:
     built:
